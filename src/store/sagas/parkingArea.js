@@ -5,7 +5,7 @@ import axios from 'axios';
 export function* fetchParkingAreasSaga(action) {
     yield put(actions.fetchParkingAreasStart());
     try {
-        const res = yield axios.get('http://localhost:5001/api/parkingAreas')
+        const res = yield axios.get('/api/parkingAreas')
         const fetchedParkingAreas = [];
 
         for (let key in res.data) {
@@ -22,7 +22,7 @@ export function* fetchParkingAreasSaga(action) {
 export function* fetchParkingAreasByName(action) {
     yield put(actions.fetchParkingAreasStart());
     try {
-        const res = yield axios.get('http://localhost:5001/api/parkingAreas')
+        const res = yield axios.get('/api/parkingAreas')
         const fetchedParkingAreas = [];
 
         for (let key in res.data) {
