@@ -1,0 +1,40 @@
+.SearchBar{
+    background-color: rgb(213, 218, 233);
+    width: 100%;
+    margin-top: 100px;
+    color: rgb(68, 104, 212);
+}
+
+.AllFields{
+    padding: 15px 50px;
+    display: flex;
+    flex-flow: column;
+}
+.SearchBtn{
+    align-self: flex-end;
+    /* margin-top: 20px; */
+    margin-left: 20px ;
+    margin-top: 50px;
+    color: white;
+    width: 20%;
+    background: linear-gradient(40deg, rgb(28, 41, 97)  30%, rgb(59, 76, 161) 80%);
+}
+.SearchBtn:hover{
+    background: linear-gradient(40deg, rgb(82, 97, 172)  30%, rgb(87, 107, 163) 80%);
+}
+
+.mapHeightResponsive{
+    height: 100vh;
+ }
+ 
+.formControl {
+    margin: 1px;
+    min-width: 120;
+    max-width: 300;
+}
+.h3 {
+    padding: 10px;
+    margin-top: 30px;
+    color: white;
+    background-color: rgba(7, 20, 61, 0.911);
+ }

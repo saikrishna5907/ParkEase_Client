@@ -1,0 +1,49 @@
+.cardDeck{
+display:flex;
+width: 40%;
+}
+.Card{
+    flex-flow: column;
+    margin: 10px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-color: rgb(99, 128, 31);
+    border-top-color: rgb(32, 90, 178);
+    border-top-width: 5px;
+    border-bottom-width: 5px;    
+}
+.buttonStyle{
+    background-color: black;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    /* text-transform: uppercase; */
+    background-image: linear-gradient(150deg, #2155b6da 0%, #6f74726c 51%,   #00b2df 75%);
+    text-decoration: none;
+}
+.buttonStyle a{
+    color: rgb(255, 250, 250);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+/* .buttonStyle a,
+.buttonStyle a:hover,
+.buttonStyle a:active,
+.buttonStyle a.active
+{
+    display:inline-block;
+    height:100%;
+    color: rgb(255, 250, 250);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-color: none;
+    display: block;
+} */

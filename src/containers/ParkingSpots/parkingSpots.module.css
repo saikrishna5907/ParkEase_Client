@@ -1,0 +1,36 @@
+.floorLayout{
+   padding: 10px;
+   display: flex;
+   margin-top: 30px;
+   flex-wrap: wrap;
+   /* justify-content: space-between; */
+   background-color: rgba(7, 20, 61, 0.911);
+}
+.h3 {
+   padding: 10px;
+   margin-top: 30px;
+   margin-bottom: 50px;
+   color: white;
+   background-color: rgba(7, 20, 61, 0.911);
+}
+.mainContainer{
+   margin-top:100px;
+}
+
+
+.AllFields{
+   padding: 15px 50px;
+   display: flex;
+   flex-flow: column;
+}
+.SearchBtn{
+   align-self: flex-end;
+   /* margin-top: 20px; */
+   margin-left: 20px ;
+   color: white;
+   width: 20%;
+   background: linear-gradient(40deg, rgb(28, 41, 97)  30%, rgb(59, 76, 161) 80%);
+}
+.SearchBtn:hover{
+   background: linear-gradient(40deg, rgb(82, 97, 172)  30%, rgb(87, 107, 163) 80%);
+}

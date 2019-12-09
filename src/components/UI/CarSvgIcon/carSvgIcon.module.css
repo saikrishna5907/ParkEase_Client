@@ -1,0 +1,10 @@
+.svgStyle{
+    transform: translate(5%)
+}
+.spotsSvg{
+    stroke:rgb(0, 0, 0);
+    stroke-width:5;
+    opacity:0.5;    
+    color-interpolation-filters: rgb(84, 177, 177);
+    /* fill: rgb(44, 238, 102); */
+}
