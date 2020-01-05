@@ -1,13 +1,18 @@
 import * as actions from '../actions/index';
 import { put } from 'redux-saga/effects';
-import axios from 'axios';
+import axios from '../../axios-server';
 
 export function* fetchParkingSpotsSaga(action) {
     yield put(actions.fetchParkingSpotsStart());
     try {
-        const res = yield axios.get('/api/parkingSpots');
+        const res = yield axios({
+            method: 'GET',
+            url: '/parkingSpots',
+            headers: {
+                Authorization: 'Bearer ' + action.token
+            }
+        })
         const fetchedParkingSpots = [];
-
         for (let key in res.data) {
             fetchedParkingSpots.push({
                 ...res.data[key],
@@ -22,10 +27,16 @@ export function* fetchParkingSpotsSaga(action) {
 export function* fetchParkingSpotsByAreaNameSaga(action) {
     yield put(actions.fetchParkingSpotsByAreaNameStart());
     try {
-        const res = yield axios.get(`/api/parkingSpotsInParticularArea/${action.areaName}`);
+        const res = yield axios({
+            method: 'GET',
+            url: `/parkingSpotsInParticularArea/${action.areaName}`,
+            headers: {
+                Authorization: 'Bearer ' + action.token
+            }
+        })
         const fetchedParkingSpotsByfloorAndAreaName = [];
         const fetchedParkingAreaFloorNames = [];
-        const fetchedAllParkingSpotsinArea=[];
+        const fetchedAllParkingSpotsinArea = [];
         for (let key in res.data) {
             //pushing only the requested floor ParkingSpots to array
             if (res.data[key].floorName === action.floorName) {
@@ -37,10 +48,10 @@ export function* fetchParkingSpotsByAreaNameSaga(action) {
             }
         }
         for (let key in res.data) {
-                fetchedAllParkingSpotsinArea.push({
-                    ...res.data[key],
-                    id: key
-                });
+            fetchedAllParkingSpotsinArea.push({
+                ...res.data[key],
+                id: key
+            });
         }
         // fetchedParkingAreaFloorNames.push("Select");
         for (let key in res.data) {

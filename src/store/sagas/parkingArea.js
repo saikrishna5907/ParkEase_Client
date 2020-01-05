@@ -1,11 +1,17 @@
 import * as actions from '../actions/index';
 import { put} from 'redux-saga/effects';
-import axios from 'axios';
+import axios from '../../axios-server';
 
 export function* fetchParkingAreasSaga(action) {
     yield put(actions.fetchParkingAreasStart());
     try {
-        const res = yield axios.get('/api/parkingAreas')
+        const res = yield axios({
+            method: 'GET',
+            url: '/parkingAreas',
+            headers: {
+                Authorization: 'Bearer ' + action.token
+            }
+        })
         const fetchedParkingAreas = [];
 
         for (let key in res.data) {
@@ -22,7 +28,13 @@ export function* fetchParkingAreasSaga(action) {
 export function* fetchParkingAreasByName(action) {
     yield put(actions.fetchParkingAreasStart());
     try {
-        const res = yield axios.get('/api/parkingAreas')
+        const res = yield axios({
+            method: 'GET',
+            url: '/parkingAreas',
+            headers: {
+                Authorization: 'Bearer ' + action.token
+            }
+        })
         const fetchedParkingAreas = [];
 
         for (let key in res.data) {

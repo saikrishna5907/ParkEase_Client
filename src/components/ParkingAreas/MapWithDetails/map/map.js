@@ -13,7 +13,7 @@ import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClust
 import { compose, withProps, withHandlers, withState } from 'recompose';
 import MarkerIcon from '../../../UI/CarSvgIcon/carSvgIcon';
 import MarkerComponent from './Marker/marker';
-
+import {} from '../../../..'
 
 class MapComponent extends Component {
     state = {
@@ -32,7 +32,7 @@ class MapComponent extends Component {
             withState('clusterIcon', 'setClusterIcon', ''),
             withState('percentage', 'setPercentage', ''),
             withProps({
-                googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9618Pxr_GNUxN6d54uU5-NWMOfdqpimE",
+                googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=APIKEY`,
                 loadingElement: <Spinner />,
                 containerElement: <div style={{ height: `100%` }} />,
                 mapElement: <div style={{ height: `100%` }} />,
@@ -56,7 +56,6 @@ class MapComponent extends Component {
                 },
                 myOnClusteringEnd: ({ setClusterIcon, setPercentage }) => (markerClusterer) => {
                     const childMarkers = markerClusterer.getMarkers();
-                    console.log(`Current clicked markers length: ${childMarkers.map(x => x.title)}`)
                     let childTotalPercent = 0;
                     childMarkers.map(marker => {
                         return childTotalPercent += +marker.title;

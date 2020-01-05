@@ -1,8 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const fetchParkingSpots = () => {
+export const fetchParkingSpots = (token) => {
     return {
-        type: actionTypes.FETCH_PARKING_SPOTS_SAGA
+        type: actionTypes.FETCH_PARKING_SPOTS_SAGA,
+        token: token
     };
 }
 export const fetchParkingSpotsFail = (error) => {
@@ -36,10 +37,11 @@ export const fetchParkingSpotsByAreaNameSuccess = (allParkingSpotsinArea,parking
         parkingAreaFloorNames: parkingAreaFloorNames
     }
 }
-export const fetchParkingSpotsByAreaName = (areaName, floorName) => {
+export const fetchParkingSpotsByAreaName = (areaName, floorName, token) => {
     return {
         type: actionTypes.FETCH_PARKING_SPOTS_BY_PARKING_NAME_SAGA,
         areaName: areaName,
-        floorName: floorName
+        floorName: floorName,
+        token: token
     }
 }

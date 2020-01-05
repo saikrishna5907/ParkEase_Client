@@ -14,4 +14,21 @@ export {
     fetchParkingSpotsByAreaName,
     fetchParkingSpotsByAreaNameStart,
     fetchParkingSpotsByAreaNameSuccess,
-} from './parkingSpots'
+} from './parkingSpots';
+export {
+    fetchMyParkingStatus,
+    fetchParkingStatusFail,
+    fetchParkingStatusStart,
+    fetchParkingStatusSuccess
+} from './checkStatus';
+export {
+    authUser,
+    logout,
+    logoutSucceed,
+    authUserFailed,
+    authUserStart,
+    authUserSuccess,
+    authCheckState,
+    checkAuthTimeOut,
+    setAuthRedirectPath
+} from './auth';

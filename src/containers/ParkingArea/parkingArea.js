@@ -17,6 +17,7 @@ const MenuProps = {
         style: {
             maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
             width: 250,
+            errorMsg: ''
         },
     },
 };
@@ -25,17 +26,16 @@ class ParkingArea extends Component {
         loading: true,
         selectedAreas: [],
         // isBtnClicked: false,
-        contentToDisplay: 'Please select aleast one Parking Area to view details.',
         btnClickedButNotSelected: false
     }
     componentDidMount() {
-        this.props.onFetchParkingAreas();
+        this.props.onFetchParkingAreas(localStorage.getItem('token'));
     }
     // componentWillUpdate(prevState){
     //     console.log(this.state.selectedAreas !== prevState.selectedAreas);
     //     return this.state.selectedAreas !== prevState.selectedAreas
     // }
-    handleChange = event => {  
+    handleChange = event => {
         this.setState({ selectedAreas: event.target.value });
     };
 
@@ -43,9 +43,11 @@ class ParkingArea extends Component {
         // this.setState({ isBtnClicked: true });
         if (this.state.selectedAreas.length === 0) {
             this.setState({ btnClickedButNotSelected: true });
+            this.setState({ errorMsg: 'Please Select At least one ' })
+
         } else
             this.setState({ btnClickedButNotSelected: false });
-        this.props.onFetchSelectedParkingAreas(this.state.selectedAreas);
+        this.props.onFetchSelectedParkingAreas(this.state.selectedAreas, localStorage.getItem('token'));
     }
     render() {
         let form = (
@@ -78,13 +80,17 @@ class ParkingArea extends Component {
                 </FormControl>
             </div>
         );
-        let parkingAreas = <Container><h3 className={classes.h3}>{this.state.contentToDisplay}</h3></Container>;
+        let parkingAreas = (
+            <Container>
+                <h3 className={classes.h3}>Please select aleast one Parking Area to view details.</h3>
+            </Container>
+        )
         if (this.props.loading) {
             parkingAreas = <Spinner />
         }
 
         // parkingAreas =  <h3 className={classes.h3}>{this.state.contentToDisplay}</h3>;
-        if (!this.props.loading && !this.state.btnClickedButNotSelected) {
+        if (!this.props.loading && !this.state.btnClickedButNotSelected && this.state.selectedAreas.length > 0) {
             parkingAreas = this.props.parkingAreasByName.map(parkingArea => {
                 return (
                     <div
@@ -119,7 +125,7 @@ class ParkingArea extends Component {
                         </Col>
                     </Row>
                 </Container>
-               
+
 
             </Fragment>
         );
@@ -134,8 +140,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchParkingAreas: () => dispatch(actions.fetchParkingAreas()),
-        onFetchSelectedParkingAreas: (listOfSelectedAreas) => dispatch(actions.fetchParkingAreasByName(listOfSelectedAreas))
+        onFetchParkingAreas: (token) => dispatch(actions.fetchParkingAreas(token)),
+        onFetchSelectedParkingAreas: (listOfSelectedAreas, token) => dispatch(actions.fetchParkingAreasByName(listOfSelectedAreas, token))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ParkingArea); 

@@ -1,0 +1,10 @@
+.mainDiv{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+}
+.cardStyle{
+    color: rgb(255, 255, 255);
+    background-color: rgb(71, 76, 126);
+}

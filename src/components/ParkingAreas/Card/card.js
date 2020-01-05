@@ -3,9 +3,7 @@ import { Card, CardDeck, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import classes from './card.module.css';
 class CardComponent extends Component {
-    componentWillUpdate(p){
-
-    }
+   
     render() {
 
         const cardOutput =

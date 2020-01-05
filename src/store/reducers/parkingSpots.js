@@ -4,7 +4,8 @@ const initialState = {
     parkingSpotsByfloorAndAreaName: [],
     parkingAreaFloorNames: [],
     allParkingSpotsinArea: [] ,
-    loading: false
+    loading: false,
+    error: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +24,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_PARKING_SPOTS_FAILED:
             return {
                 ...state,
+                error: action.error,
                 loading: false
             }
         case actionTypes.FETCH_PARKING_SPOTS_BY_PARKING_NAME_START:

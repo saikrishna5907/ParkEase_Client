@@ -1,0 +1,11 @@
+.statusForm{
+    align-content: center;
+    text-align: center;
+    margin-top: 100px;
+    width: 60%;    
+}
+.heading{
+    text-align: center;
+    width: 100%;
+    background-image: linear-gradient(150deg, #2c03e286 10%, #6b1ac783 51%,   #4c2ebb 75%);
+}

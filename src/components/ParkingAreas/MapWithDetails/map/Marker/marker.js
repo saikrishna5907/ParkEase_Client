@@ -1,11 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Button, Modal } from 'react-bootstrap'
-import {
-    Marker,
-    InfoWindow,
-}
-    from 'react-google-maps';
+import {Marker}from 'react-google-maps';
 import MarkerIcon from '../../../../UI/CarSvgIcon/carSvgIcon';
 class MarkerComponent extends Component {
     state = {

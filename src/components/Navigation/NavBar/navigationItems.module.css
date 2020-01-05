@@ -1,0 +1,83 @@
+/* .menuNav {
+    padding: 10px;
+    height: 45px;
+    margin-left: 100px;
+    margin-right: 500px;
+    position: relative;
+}
+.navBar{
+    background-color: rgba(2, 11, 90, 0.856)
+}
+.navbarItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+
+@media (min-width:500px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
+}
+
+@media (max-width: 990px) {
+    .menuNav {
+        height: auto;
+    }
+} */
+.NavigationItems{
+    margin: 0;
+    padding: 0 ;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+.loginBtn{
+    margin: 10px;
+    background: salmon;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+    border:4px solid rgb(101, 224, 157);
+}
+a:hover,
+ a:active,
+a.active{
+    text-decoration: none;
+}
+.loginBtn:focus{
+    outline: none;
+}
+.loginBtn:hover{
+    background-color: rgb(84, 160, 223);
+    border: 4px solid rgba(101, 224, 156, 0.575);
+}
+.signUpBtn{
+    margin: 10px;
+    border: none;
+    background: rgb(240, 91, 5);
+    border-radius: 5px;
+    color: white; 
+    padding: 5px 10px;
+}
+.signUpBtn:focus{
+    outline: none;
+}
+.signUpBtn:hover{
+    background: rgba(134, 92, 212, 0.774);
+}
+@media (min-width:1078px){
+    .NavigationItems{
+        flex-flow: row;
+    }
+    .loginBtn{
+        background: transparent;
+    }
+   
+}

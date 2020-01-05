@@ -1,8 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const fetchParkingAreas = () => {
+export const fetchParkingAreas = (token) => {
     return {
-        type: actionTypes.FETCH_PARKING_AREAS_SAGA
+        type: actionTypes.FETCH_PARKING_AREAS_SAGA,
+        token: token
     };
 }
 export const fetchParkingAreasFail = (error) => {
@@ -29,9 +30,10 @@ export const fetchParkingAreasByNameSuccess = (parkingAreasByName) => {
         parkingAreasByName: parkingAreasByName
     }
 }
-export const fetchParkingAreasByName = (listOfAreaNames) => {
+export const fetchParkingAreasByName = (listOfAreaNames, token) => {
         return {
             type: actionTypes.FETCH_PARKING_AREAS_BY_NAME_SAGA,
-            listOfAreaNames: listOfAreaNames
+            listOfAreaNames: listOfAreaNames,
+            token: token
     }
 }

@@ -8,15 +8,7 @@ const mapWithDetails = props => {
     return (
         <Fragment>
             <p>
-                Some shit about the map
-                afashkaksd
-                aSdasdasldlad
-                afashkaksdsdasdfafasd
-                fromsdf
-                aSdasdasldladsf
-                aSdasdasldladsfasd
-                        dsf.forEach(element => {
-                });
+                Description about the map  will be added later as cards
             </p>
             <MapComponent />
         </Fragment >

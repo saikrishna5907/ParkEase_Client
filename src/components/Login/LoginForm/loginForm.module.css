@@ -1,0 +1,12 @@
+.mainDiv{
+    background-color: rgba(101, 224, 156, 0.575);
+    margin: 20vh 25vw;
+    height: 70vh;
+    display: flex;
+    flex-flow: row;
+    color: white;
+}
+.passwordField {
+    width: 200px;
+    margin: 10px
+}

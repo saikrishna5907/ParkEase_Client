@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     parkingAreas: [],
     parkingAreasByName: [],
-    loading: false
+    loading: false,
+    error: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_PARKING_AREAS_FAILED:
             return {
                 ...state,
+                error: action.error,
                 loading: false
             }
         case actionTypes.FETCH_PARKING_AREAS_BY_NAME_SUCCESS:

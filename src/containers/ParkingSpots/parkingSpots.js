@@ -10,7 +10,7 @@ import Spinner from '../../components/UI/Spinner/spinner';
 import ParkingSpotsByFloor from './ParkingSpotsByFloor/parkingSpotByFloor';
 const ToReflectMarginforTexField = withStyles({
     root: {
-        marginBottom: '25px'
+        marginBottom: '25px',
     }
 })(TextField);
 class ParkingSpots extends Component {
@@ -23,7 +23,7 @@ class ParkingSpots extends Component {
     }
 
     componentDidMount() {
-        this.props.onFetchParkingsByAreaName(this.state.areaName, this.state.floorName)
+        this.props.onFetchParkingsByAreaName(this.state.areaName, this.state.floorName, localStorage.getItem('token'))
     }
     componentWillMount() {
         this.setState({ areaName: this.props.match.params.areaName })
@@ -32,7 +32,7 @@ class ParkingSpots extends Component {
         this.setState({ floorName: event.target.value });
     }
     onSearchBtnClickHandler = () => {
-        this.props.onFetchParkingsByAreaName(this.state.areaName, this.state.floorName);
+        this.props.onFetchParkingsByAreaName(this.state.areaName, this.state.floorName, localStorage.getItem('token'));
         this.setState({ isBtnClicked: true });
         console.log('selcted:  ' + this.state.floorName);
     }
@@ -110,7 +110,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchParkingsByAreaName: (areaName, floorName) => dispatch(actions.fetchParkingSpotsByAreaName(areaName, floorName))
+        onFetchParkingsByAreaName: (areaName, floorName, token) => dispatch(actions.fetchParkingSpotsByAreaName(areaName, floorName, token))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ParkingSpots);
